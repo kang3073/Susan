@@ -21,8 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.Jindong.Susan" />
-	
+	<context:component-scan base-package="com.Jindong.susan" />
+	<context:component-scan base-package="com.Jindong.controller" />
+	<context:component-scan base-package="com.Jindong.dao" />
+	<context:component-scan base-package="com.Jindong.service" />
+	<context:component-scan base-package="com.Jindong.dto" />
 	
 	
 </beans:beans>

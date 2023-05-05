@@ -18,18 +18,18 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form action="${pageContext.request.contextPath}/main" method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="ID입력하세요" />
-                                                <label for="inputEmail">ID</label>
+                                                <input class="form-control" name="Id" id="logId" type="text"/>
+                                                <label for="logId">ID</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="비밀번호 입력하세요" />
-                                                <label for="inputPassword">Password</label>
+                                                <input class="form-control" name="Pass" id="logPass" type="password" placeholder="비밀번호 입력하세요" />
+                                                <label for="logPass">Password</label>
                                             </div>
                                            
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-primary" href="#">Login</a>
+                                                <input type="submit" class="btn btn-primary">Login
                                             </div>
                                         </form>
                                     </div>

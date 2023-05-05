@@ -1,4 +1,4 @@
-package com.Jindong.Susan;
+package com.Jindong.susan;
 
 import java.text.DateFormat;
 import java.util.Date;
