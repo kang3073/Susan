@@ -48,7 +48,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
                                 관리 현황
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="${pageContext.request.contextPath}/manager" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
                                 고객 관리
                             </a>
