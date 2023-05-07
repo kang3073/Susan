@@ -16,20 +16,20 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">1번가 수산</h3></div>
                                     <div class="card-body">
-                                        <form action="${pageContext.request.contextPath}/main" method="post">
+                                        <form action="${pageContext.request.contextPath}/login" method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" name="Id" id="logId" type="text"/>
-                                                <label for="logId">ID</label>
+                                                <label for="logId">아이디</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" name="Pass" id="logPass" type="password" placeholder="비밀번호 입력하세요" />
-                                                <label for="logPass">Password</label>
+                                                <input class="form-control" name="Pass" id="logPass" type="password" />
+                                                <label for="logPass">비밀번호</label>
                                             </div>
                                            
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <input type="submit" class="btn btn-primary">Login
+                                                <input type="submit" class="btn btn-primary" value="로그인">
                                             </div>
                                         </form>
                                     </div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.Jindong.mappers.customerMapper">
+	<insert id="insert">
+        insert into customer
+        values (#{name},#{phoneNum},#{postNum},#{addr},#{addr2})
+    </insert>
+    
+    <select id="list" resultType="com.Jindong.dto.CustomerDTO">
+    	select num, Name, Phone_Num, concat(post_num, space(1), addr, space(1), addr2) addr from customer
+    </select>
+    
+    <select id="update" resultType="com.Jindong.dto.CustomerDTO">
+    	select * from customer
+    	where num=${num}
+    </select>
+</mapper>
