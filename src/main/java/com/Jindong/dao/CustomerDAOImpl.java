@@ -25,13 +25,25 @@ public class CustomerDAOImpl implements CustomerDAO{
 	}
 
 	@Override
-	public List<CustomerDTO> list() {
-		return sqlSession.selectList(namespace+".list");
+	public List<CustomerDTO> list(CustomerDTO customerDTO) {
+		return sqlSession.selectList(namespace+".list", customerDTO);
 	}
 
 	@Override
-	public List<CustomerDTO> update(String num) {
-		return sqlSession.selectList(namespace+".update");
+	public CustomerDTO update(int num) {
+		return sqlSession.selectOne(namespace+".update", num);
+	}
+
+	@Override
+	public void updatePro(CustomerDTO customerDTO) {
+		
+		sqlSession.update(namespace+".updatePro", customerDTO);
+	}
+
+	@Override
+	public void delete(int num) {
+		
+		sqlSession.delete(namespace+".deletePro", num);
 	}
 	
 	

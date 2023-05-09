@@ -20,10 +20,12 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@RequestMapping(value = "/guest", method = RequestMethod.GET)
-	public String guest(HttpServletRequest request, Model model) {
+	public String guest(CustomerDTO customerDTO,HttpServletRequest request, Model model) {
 		System.out.println("CustomerController customerList()");
+		String name = request.getParameter("name");
+		String phoneNum = request.getParameter("phoneNum");
 		
-		List<CustomerDTO> customerList=customerService.list();
+		List<CustomerDTO> customerList=customerService.list(customerDTO);
 		
 		model.addAttribute("customerList", customerList);
 		
@@ -38,7 +40,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/guest/insertPro", method = RequestMethod.POST)
-	public String insertCustomer(CustomerDTO customerDTO) {
+	public String insertPro(CustomerDTO customerDTO) {
 		System.out.println("CustomerController insertPro()");
 
 		customerService.insert(customerDTO);
@@ -46,13 +48,33 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/guest/update", method = RequestMethod.GET)
-	public String updateCustomer(HttpServletRequest request, Model model) {
+	public String update(HttpServletRequest request, Model model) {
 		System.out.println("CustomerController customerUpdate()");
-		String num=request.getParameter("num");
+		int num=Integer.parseInt(request.getParameter("num"));
 		
-		List<CustomerDTO> customerUpdate=customerService.update(num);
-		
+		CustomerDTO customerUpdate=customerService.update(num);
+		System.out.println(num);
 		model.addAttribute("customerUpdate", customerUpdate);
 		return "guest/updateForm";
 	}
+	
+	@RequestMapping(value = "/guest/updatePro", method = RequestMethod.POST)
+	public String updatePro(CustomerDTO customerDTO) {
+		System.out.println("CustomerController updatePro()");
+
+		customerService.updatePro(customerDTO);
+		return "guest/close";
+	}
+	
+	@RequestMapping(value = "/guest/deletePro", method = RequestMethod.GET)
+	public String deletePro(HttpServletRequest request, Model model) {
+		System.out.println("CustomerController deletePro()");
+		int num=Integer.parseInt(request.getParameter("num"));
+		
+		customerService.delete(num);
+		System.out.println(num);
+		
+		return "redirect:/guest";
+	}
+	
 }

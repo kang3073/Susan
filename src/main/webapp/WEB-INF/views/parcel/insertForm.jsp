@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번가 수산 고객 수정</title>
+<title>1번가 수산 배송 추가</title>
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 <link href="../resources/css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
@@ -46,29 +46,28 @@
 		<!--  본문 내용 시작 -->
 
 		<div id="wrap">
-			<h3>고객 등록</h3>
-			<form action="${pageContext.request.contextPath}/guest/updatePro" id="update" method="post">
+			<h3>배송 등록</h3>
+			<form action="${pageContext.request.contextPath}/guest/insertPro" id="insert" method="post">
 				<fieldset>
 					<div class="insert">
-						<input type="hidden" name="num" class="num" value="${customerUpdate.num }">
 						<label>이름</label> 
-						<input type="text" name="name" class="name" value="${customerUpdate.name }">
+						<input type="text" name="name" class="name">
 						<br>
 						<label>전화번호</label> 
-						<input type="text" name="phoneNum" class="phoneNum" value="${customerUpdate.phoneNum }"><br> 
+						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
 						<label>주소</label>
 							<div>
-							<input type="text" id="sample4_postcode" name="postNum" style="float: left;" class="postNum" value="${customerUpdate.postNum }">
+							<input type="text" id="sample4_postcode" name="postNum" style="float: left;" class="postNum" placeholder="우편번호">
 							<input type="button" class="btn btn-primary" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
 							</div>
-							<input type="text" id="sample4_roadAddress" class="addr" name="addr" style="width: 530px;" value="${customerUpdate.addr }">
+							<input type="text" id="sample4_roadAddress" class="addr" placeholder="도로명주소" name="addr" style="width: 530px;">
 							<span id="guide" style="color: #999; display: none"></span> <br>
-							<input type="text" id="sample4_detailAddress" class="addr2" size="60" name="addr2" value="${customerUpdate.addr2 }">
+							<input type="text" id="sample4_detailAddress" class="addr2" size="60" placeholder="상세주소" name="addr2">
 							<br>
 					</div>
 				</fieldset>
 				<div id="button" style="text-align: center;">
-					<input type="submit" value="수정" class="btn btn-primary">
+					<input type="submit" value="등록" class="btn btn-primary">
 					<input type="reset" value="취소" class="btn btn-primary">
 				</div>
 			</form>

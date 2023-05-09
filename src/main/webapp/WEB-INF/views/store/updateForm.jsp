@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번가 수산 고객 수정</title>
+<title>1번가 수산 판매 수정</title>
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 <link href="../resources/css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
@@ -46,7 +46,7 @@
 		<!--  본문 내용 시작 -->
 
 		<div id="wrap">
-			<h3>고객 등록</h3>
+			<h3>판매 수정</h3>
 			<form action="${pageContext.request.contextPath}/guest/updatePro" id="update" method="post">
 				<fieldset>
 					<div class="insert">

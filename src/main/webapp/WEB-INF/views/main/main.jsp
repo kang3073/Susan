@@ -55,7 +55,7 @@
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">판매 관리</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">바로가기</a>
+                                        <a class="small text-white stretched-link" href="${pageContext.request.contextPath}/sale">바로가기</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

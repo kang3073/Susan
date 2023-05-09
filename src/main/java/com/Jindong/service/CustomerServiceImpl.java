@@ -23,13 +23,26 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public List<CustomerDTO> list() {
-		return customerDAO.list();
+	public List<CustomerDTO> list(CustomerDTO customerDTO) {
+		return customerDAO.list(customerDTO);
 	}
 
 	@Override
-	public List<CustomerDTO> update(String num) {
+	public CustomerDTO update(int num) {
 		return customerDAO.update(num);
+	}
+
+	@Override
+	public void updatePro(CustomerDTO customerDTO) {
+		customerDAO.updatePro(customerDTO);
+		
+	}
+
+	@Override
+	public void delete(int num) {
+		
+		customerDAO.delete(num);
+		
 	}
 	
 	

@@ -29,11 +29,11 @@
                             </a>
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cloud-download-alt"></i></div>
-                                입고 관리
+                                구매 관리
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/sale">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                                출고 관리
+                                판매 관리
                             </a>
                         </div>
                     </div>
