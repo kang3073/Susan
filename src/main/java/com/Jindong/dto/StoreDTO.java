@@ -1,23 +1,28 @@
 package com.Jindong.dto;
 
-public class SaleDTO {
+public class StoreDTO {
 	public int num;
+	public String account;
 	public String menu;
 	public int qty;
 	public String qty1;
 	public String unit;
-	public int salePrice;
-	public String payment;
-	public String saleDate;
+	public int StorePrice;
+	public String StoreDate;
 	public String sdate;
 	public String edate;
-	
 	
 	public int getNum() {
 		return num;
 	}
 	public void setNum(int num) {
 		this.num = num;
+	}
+	public String getAccount() {
+		return account;
+	}
+	public void setAccount(String account) {
+		this.account = account;
 	}
 	public String getMenu() {
 		return menu;
@@ -43,23 +48,17 @@ public class SaleDTO {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
-	public int getSalePrice() {
-		return salePrice;
+	public int getStorePrice() {
+		return StorePrice;
 	}
-	public void setSalePrice(int salePrice) {
-		this.salePrice = salePrice;
+	public void setStorePrice(int storePrice) {
+		StorePrice = storePrice;
 	}
-	public String getPayment() {
-		return payment;
+	public String getStoreDate() {
+		return StoreDate;
 	}
-	public void setPayment(String payment) {
-		this.payment = payment;
-	}
-	public String getSaleDate() {
-		return saleDate;
-	}
-	public void setSaleDate(String saleDate) {
-		this.saleDate = saleDate;
+	public void setStoreDate(String storeDate) {
+		StoreDate = storeDate;
 	}
 	public String getSdate() {
 		return sdate;

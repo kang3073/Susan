@@ -27,7 +27,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-truck"></i></div>
                                 택배 관리
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/store">
                                 <div class="sb-nav-link-icon"><i class="fas fa-cloud-download-alt"></i></div>
                                 구매 관리
                             </a>

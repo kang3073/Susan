@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번가 수산 판매 관리</title>
+<title>1번가 수산 구매 관리</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="../resources/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
@@ -19,16 +19,22 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">판매 관리</h1>
+                        <h1 class="mt-4">구매 관리</h1>
 						<hr>
                         <div class="card mb-4">
-                            <div class="card-body">
+                            <div class="card-header">
 <!--                             <div id="productionselect_search"> -->
-											<form action="${pageContext.request.contextPath}/guest" method="GET">
-												<label>이름 : </label>
-												<input type="text" name="name" id="name" value="">
-												<label>전화 번호 : </label>
-												<input type="text" name="phoneNum" id="phoneNum" value="">
+											<form action="${pageContext.request.contextPath}/store" method="GET">
+												<i class="fas fa-table me-1">구매 정보 조회</i>
+	                               				구매 정보 조회<br>
+	                               				<hr>
+												<label>업체명 : </label>
+												<input type="text" name="account" id="account" value="">
+												<label>품목 : </label>
+												<input type="text" name="menu" id="menu" value="">
+												<label>구매 기간 : </label>
+												<input type="date" name="sdate" id="sdate" value="">
+												-<input type="date" name="edate" id="edate" value="">
 												<input type="submit" class="btn btn-primary" id="IconButton6" value="조회">
 											</form>
                             </div>
@@ -36,63 +42,66 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                고객 정보 조회
+                                구매 정보
+                                <input type="button" class="btn btn-primary" id="IconButton2" value="엑셀다운로드">
                                 <input type="button" class="btn btn-primary" id="IconButton2" value="신규등록" onclick="insert()">
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>이름</th>
-                                            <th>번호</th>
-                                            <th>주소</th>
-<!--                                             <th>구매횟수</th> -->
+<!--                                         	<th><lable><input type="checkbox" name="codeId" id="checkall"></lable></th> -->
+                                            <th>업체명</th>
+                                            <th>품목</th>
+                                            <th>수량</th>
+                                            <th>구매 금액</th>
+                                            <th>총 금액</th>
+                                            <th>구매 일</th>
                                             <th>비고</th>
                                         </tr>
                                     </thead>
-<!--                                     <tfoot> -->
-<!--                                         <tr> -->
-<!--                                             <th>이름</th> -->
-<!--                                             <th>번호</th> -->
-<!--                                             <th>주소</th> -->
-<!--                                             <th>비고</th> -->
-<!--                                         </tr> -->
-<!--                                     </tfoot> -->
+
                                     <tbody>
                                     <c:choose>
-                                    	<c:when test="${empty customerList }">
+                                    	<c:when test="${empty storeList }">
                                     		<tr>
-                                    			<td align="center">데이터가 없습니다.</td>
-                                    			<td align="center">데이터가 없습니다.</td>
-                                    			<td align="center">데이터가 없습니다.</td>
 <!--                                     			<td align="center">데이터가 없습니다.</td> -->
+                                    			<td align="center">데이터가 없습니다.</td>
+                                    			<td align="center">데이터가 없습니다.</td>
+                                    			<td align="center">데이터가 없습니다.</td>
+                                    			<td align="center">데이터가 없습니다.</td>
+                                    			<td align="center">데이터가 없습니다.</td>
+                                    			<td align="center">데이터가 없습니다.</td>
                                     			<td align="center">데이터가 없습니다.</td>
                                     		</tr>
                                     	</c:when>
-                                    	<c:when test="${!empty customerList }">
-                                    		<c:forEach var="cust" items="${customerList}">
+                                    	<c:when test="${!empty storeList }">
+                                    		<c:forEach var="store" items="${storeList}">
                                     		<tr>
-                                            	<td class="name">${cust.name}</td>
-                                            	<td class="phoneNum">${cust.phoneNum}</td>
-                                            	<td class="addr">${cust.addr}</td>
+<!--                                     			<td><input type="checkbox" name="codeId" id="check"></td> -->
+                                            	<td class="account">${store.account}</td>
+                                            	<td class="menu">${store.menu}</td>
+                                            	<td class="qty1">${store.qty1}</td>
+                                            	<td class="storePrice">${store.storePrice}</td>
+                                            	<td class="storePrice">${store.storePrice*store.qty}</td>
+                                            	<td class="storeDate">${store.storeDate}</td>
                                             	<td class="num">
-                                            	<input type="button" class="btn btn-primary" id="IconButton2" name="num" value="수정" onclick="update('${cust.num}');">
+                                            	<input type="button" class="btn btn-primary" id="IconButton2" name="num" value="수정" onclick="update('${store.num}');">
                                             	<input type="button" class="btn btn-primary" id="IconButton2" name="num" value="삭제" 
-                                            			onclick="location.href='${pageContext.request.contextPath}/guest/deletePro?num=${cust.num}'">
+                                            			onclick="location.href='${pageContext.request.contextPath}/store/deletePro?num=${store.num}'">
                                             	</td>
-<%--                                             	<td class="count">${cust.count}</td> --%>
-<%--                                             	<td class="count">${cust.count}</td> --%>
                                         	</tr>
+                                        	  <c:set var="total" value="${total + store.storePrice*store.qty}" />
                                     		</c:forEach>
                                     	</c:when>
                                     </c:choose>
                                     </tbody>
                                 </table>
                                 <div>
-                                총 수량
+                                총금액 : 
+                                <c:out value="${total }"></c:out>
                                 </div>
                             </div>
-<!--                             <input type="button" class="btn btn-primary" id="IconButton2" value="test" onclick="update()"> -->
                         </div>
                     </div>
                 </main>
@@ -105,7 +114,7 @@
 			  function insert() 
 			  { 
 			   window.name = "insert"; 
-			   openWin = window.open("${pageContext.request.contextPath}/guest/insert", 
+			   openWin = window.open("${pageContext.request.contextPath}/store/insert", 
 			            "childForm", "width=600, height=300,top=300, left=300, resizable = no, scrollbars = no");   
 			  }
 			  
@@ -116,7 +125,7 @@
 				var _top = Math.ceil((window.screen.height - _height) / 2);
 				let popOption = 'width='+ _width+ ', height='+ _height+ ', left='+ _left+ ', top='+ _top;
 				window.open(
-				"${pageContext.request.contextPath}/guest/update?num="+num,
+				"${pageContext.request.contextPath}/store/update?num="+num,
 				"1번가 수산",popOption);
 				}
 			

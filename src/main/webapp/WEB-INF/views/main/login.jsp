@@ -6,7 +6,7 @@
         <meta charset="UTF-8" />
         <title>1번가 수산</title>
         <link href="../resources/css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">

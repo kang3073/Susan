@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>1번가 수산 구매 추가</title>
+<title>1번가 수산 판매 추가</title>
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
 <link href="../resources/css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
@@ -15,29 +15,34 @@
 		<!--  본문 내용 시작 -->
 
 		<div id="wrap">
-			<h3>구매 등록</h3>
-			<form action="${pageContext.request.contextPath}/guest/insertPro" id="insert" method="post">
+			<h3>판매 등록</h3>
+			<form action="${pageContext.request.contextPath}/sale/insertPro" id="insert" method="post">
 				<fieldset>
 					<div class="insert">
-						<label>종류</label> 
-						<input type="text" name="name" class="name">
+						<label>품목</label> 
+						<input type="text" name="menu" class="menu">
 						<br>
 						<label>수량</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br>
-						<label>단위</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
-						<label>가격</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
-						<label>결제종류</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
-						<label>전화번호</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
-						<label>전화번호</label> 
-						<input type="text" name="phoneNum" class="phoneNum" placeholder="ex. 010-1111-2222"><br> 
+						<input type="text" name="qty" class="qty" placeholder="숫자만 입력가능">
+<!-- 						<label>단위</label> -->
+						<select name="unit" id="unit">
+							<option value="KG">KG</option>
+							<option value="마리">마리</option>
+						</select><br>
+<!-- 						<input type="text" name="unit" class="unit" placeholder="KG, 마리 만 가능"><br>  -->
+						<label>가격</label>
+						<input type="text" name="salePrice" class="salePrice" placeholder="숫자만 입력가능"><br> 
+						<label>결제</label> 
+						<select name="payment" id="payment">
+							<option value="현금">현금</option>
+							<option value="이체">이체</option>
+							<option value="카드">카드</option>
+						</select> 
+<!-- 						<input type="text" name="payment" class="payment" placeholder="ex. 010-1111-2222"><br>  -->
 				</fieldset>
 				<div id="button" style="text-align: center;">
 					<input type="submit" value="등록" class="btn btn-primary">
-					<input type="reset" value="취소" class="btn btn-primary">
+					<input type="reset" value="취소" class="btn btn-primary" onclick="window.close()">
 				</div>
 			</form>
 		</div>

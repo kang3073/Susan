@@ -22,9 +22,12 @@
                         <h1 class="mt-4">고객 관리</h1>
 						<hr>
                         <div class="card mb-4">
-                            <div class="card-body">
+                            <div class="card-header">
 <!--                             <div id="productionselect_search"> -->
 											<form action="${pageContext.request.contextPath}/guest" method="GET">
+		                          				<i class="fas fa-table me-1">고객 정보 조회</i>
+	                               				고객 정보 조회<br>
+	                               				<hr>
 												<label>이름 : </label>
 												<input type="text" name="name" id="name" value="">
 												<label>전화 번호 : </label>
@@ -36,7 +39,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                고객 정보 조회
+                                고객 정보
                                 <input type="button" class="btn btn-primary" id="IconButton2" value="신규등록" onclick="insert()">
                             </div>
                             <div class="card-body">
@@ -50,14 +53,6 @@
                                             <th>비고</th>
                                         </tr>
                                     </thead>
-<!--                                     <tfoot> -->
-<!--                                         <tr> -->
-<!--                                             <th>이름</th> -->
-<!--                                             <th>번호</th> -->
-<!--                                             <th>주소</th> -->
-<!--                                             <th>비고</th> -->
-<!--                                         </tr> -->
-<!--                                     </tfoot> -->
                                     <tbody>
                                     <c:choose>
                                     	<c:when test="${empty customerList }">
@@ -81,18 +76,13 @@
                                             			onclick="location.href='${pageContext.request.contextPath}/guest/deletePro?num=${cust.num}'">
                                             	</td>
 <%--                                             	<td class="count">${cust.count}</td> --%>
-<%--                                             	<td class="count">${cust.count}</td> --%>
                                         	</tr>
                                     		</c:forEach>
                                     	</c:when>
                                     </c:choose>
                                     </tbody>
                                 </table>
-                                <div>
-                                총 수량
-                                </div>
                             </div>
-<!--                             <input type="button" class="btn btn-primary" id="IconButton2" value="test" onclick="update()"> -->
                         </div>
                     </div>
                 </main>
