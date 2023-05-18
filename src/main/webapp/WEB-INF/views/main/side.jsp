@@ -23,7 +23,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
                                 고객 관리
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/parcel">
                                 <div class="sb-nav-link-icon"><i class="fa fa-truck"></i></div>
                                 택배 관리
                             </a>

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.Jindong.mappers.customerMapper">
 	<insert id="insert">
-        insert into customer
+        insert into customer(name,Phone_Num,post_num,addr,addr2)
         values (#{name},#{phoneNum},#{postNum},#{addr},#{addr2})
     </insert>
     
@@ -13,6 +13,7 @@
     		<if test="name != null and !name.equals('')">name like CONCAT('%',#{name},'%') </if>
 			<if test="phoneNum != null and !phoneNum.equals('')">and phone_Num like CONCAT('%',#{phoneNum},'%')</if>
     	</where>
+    	
     </select>
     
     <select id="update" resultType="com.Jindong.dto.CustomerDTO">
