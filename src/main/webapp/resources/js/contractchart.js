@@ -4,10 +4,10 @@ $(document).ready(function(){
 // Ajax 시작
 	   		$.ajax({
 	  			url:'/chart/rank',
-     		  	type:"GET",
+//     		  	type:"GET",
 	  			dataType:'json',
 	  			success:function(arr){
-	  			
+	  			console.log(arr);
 					// 자료 리스트 변수
 			  		let menuList = [];
 		  			let countList = [];
@@ -29,22 +29,15 @@ $(document).ready(function(){
 					
 					data: countList,
 			 		backgroundColor: [
-    				'rgba(243, 121, 126, 1)',
-    				'rgba(125, 160, 250, 1)',
-    				'rgba(71, 71, 161, 1)',
-    				'rgba(218, 231, 255, 1)',
-    				'rgba(81, 79, 175, 1)'
+    				'rgba(255, 47, 0, 1)',
+    				'rgba(217, 255, 0, 1)',
+    				'rgba(0, 255, 128, 1)',
+    				'rgba(255, 0, 246, 1)',
+    				'rgba(110, 0, 255, 1)'
 						],
 						
-					borderColor: [
-	                'rgba(243, 121, 126, 1)',
-	                'rgba(125, 160, 250, 1)',
-	                'rgba(71, 71, 161, 1)',
-	                'rgba(218, 231, 255, 1)',
-	                'rgba(81, 79, 175, 1)'
-			            ],
 			            
-		            borderWidth: 5
+		            borderWidth: 1
 						        }]
 						    },
 						    
@@ -53,24 +46,18 @@ $(document).ready(function(){
     					display: false
     					},
     				title: {
-        			display: true,
-        			text: '판매량 순위',
+        				display: true,
+        				text: '판매량 순위'
+        					}, // title
         			scales: {
-						xAxes: [{
-      						ticks: {
-        						fontSize: 20 // X축 레이블 값의 글자 크기
-      								}
-    							}],
-    						
-						yAxes: [{
-                			ticks: {
-                   				fontSize: 20, // Y축 레이블 값의 글자 크기
+        				 yAxes: [{
+			                ticks: {
+			                    fontSize: 15, // Y축 레이블 값의 글자 크기
 			                    stepSize: 1,
 			                    min: 0
-                					}
-            					}]
-    						}// scales
-        					}// title
+			               		 }
+			            	}]
+        				}
     					}// options
 					})// const myChart = new Chart;
 				}, 

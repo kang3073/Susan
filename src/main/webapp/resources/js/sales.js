@@ -39,23 +39,8 @@ $(document).ready(function(){
     					},
         			title: {
         			display: true,
-        			text: '판매 총액',
-        			scales: {
-        			 	xAxes: [{
-     						 ticks: {
-        						fontSize: 20 // X축 레이블 값의 글자 크기
-      								}
-    							}],
-    							
-            		 yAxes: [{
-                		ticks: {
-                    		fontSize: 20, // Y축 레이블 값의 글자 크기
-                    		stepSize: 1000,
-                    		min: 0
-                				}
-            				}]
-        				   } // scales
-        				  } // title
+        			text: '판매 총액'
+        				   } // title
     				  } // options;
 					}) // success:function(arr)
 				},
